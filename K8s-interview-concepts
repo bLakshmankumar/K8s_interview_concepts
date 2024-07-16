@@ -66,3 +66,52 @@ For example :
 ==================
    Definition: The smallest and simplest Kubernetes object. A pod represents a single instance of a running process in a cluster.
    Characteristics: A Pod Can contain one or more containers, shared storage, and network resources.
+
+10) What is Replication Controller/ReplicaSet ?
+==============================================
+  Definition: Ensures a specified number of pod replicas are running at any given time.
+  Difference: ReplicaSet is the next-generation Replication Controller.
+
+11) What is Deployments ?
+========================
+  Definition: Provides declarative updates to applications and manages ReplicaSets.
+
+12) Services in K8s ?
+======================
+  Definition: An abstract way to expose an application running on a set of pods as a network service.
+  Types:
+    ClusterIP: Exposes the service on a cluster-internal IP.
+    NodePort: Exposes the service on each Node’s IP at a static port.
+    LoadBalancer: Exposes the service externally using a cloud provider’s load balancer.
+
+13) What are ConfigMaps and Secrets ?
+=====================================
+   ConfigMaps: Store configuration data as key-value pairs.
+   Secrets: Store sensitive data like passwords and API keys.
+
+14) What are Jobs and CronJobs ?
+================================
+  Jobs: Manages batch processing jobs.
+  CronJobs: Manages scheduled jobs.
+
+15) What is Ingress ?
+=====================
+  Definition: Manages external access to services, typically HTTP.
+  Components: Ingress Controller, Ingress Resources.
+
+16) What is Network Policies ?
+=============================
+  Definition: Controls the communication between pods.
+
+17) Horizontal Pod Autoscaler (HPA) ?
+=====================================
+   Definition: Automatically scales the number of pods based on CPU utilization or other select metrics.
+
+18) Cluster Autoscaler ?
+========================
+   Definition: Automatically adjusts the size of the Kubernetes cluster based on the resource usage.
+
+19) Service Mesh ?
+===================
+   Definition: A dedicated infrastructure layer for handling service-to-service communication.
+   Tools: Istio, Linkerd.
