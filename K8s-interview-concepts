@@ -50,3 +50,7 @@ For example :
    Working Directory Layer: Sets /app as the working directory, another new layer.
    Expose Port Layer: Specifies port 8080 to be exposed, adding another layer.
    Entrypoint Layer: Sets the entrypoint to python3 app.py, creating the final layer.
+
+7) What is a dockerfile ?
+=========================
+    A Dockerfile is a text document that contains a set of instructions or commands that Docker uses to assemble an image.
