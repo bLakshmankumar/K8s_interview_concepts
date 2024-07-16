@@ -1,6 +1,7 @@
 1) What is Container Image ?
 ============================
-Definition: A read-only template that contains the application and its dependencies.
+Definition: A container image is a package of software that includes everything that is needed to run an application: code, runtime, system tools, system libraries and its dependencies. 
+            Images are commonly built using Dockerfile (AKA Containerfile), and commonly provided through image registries.
 Purpose: To create and run containers consistently across different environments.
 Example: A Docker image for a Python web application might include Python runtime, application code, and required libraries.
 
@@ -16,4 +17,36 @@ Definition: The software that runs and manages containers on a host system.
 Purpose: To provide the necessary tools and libraries to run and manage containerized applications.
 Example: Docker is a popular container runtime that allows you to create, run, and manage containers.
 
-4) 
+4) Difference between Virtual Machines and Containers ?
+=======================================================
+"Virtual machines (VMs) virtualize hardware and run a full operating system, leading to higher resource usage. 
+For example :
+-------------
+  Running three VMs means running three OS instances. Containers, however, share the host OS kernel and are managed by a container runtime, making them lightweight. 
+  Running three containers means they share the same OS, using fewer resources. This efficiency makes containers faster and more scalable than VMs."
+
+5) Understanding Container Engines ?
+====================================
+   In the early days of containers (2014/2015), containers were started and managed by a container engine.
+   A container engine offers multiple components
+   A core component that runs the containers
+   Optionally a daemon that controls the containers
+   A command line interface
+   Common container engines include and included
+     > Docker: The most well-known container engine, Docker simplifies container creation and management with a robust CLI and daemon (Docker daemon) for running and managing containers.
+     > LXC (Linux Containers): An early containerization method, LXC provides a userspace interface for the Linux kernel containment features, offering lightweight virtualization without the overhead of a full VM.
+     > Podman: A daemonless container engine, Podman emphasizes security and simplicity, allowing users to run containers as non-root users without requiring a central daemon.
+     > systemd-nspawn: Part of the systemd suite, systemd-nspawn is used for running containers in a simple and straightforward way, often used for testing and debugging system images.
+
+6) What are docker image layers and how they work and which layer will excecute first and which layer execute next and last ?
+==============================================================================================================================
+    Docker images are composed of multiple layers. Each layer represents a specific instruction in the image's Dockerfile.
+    When you build an image, each instruction in the Dockerfile adds a new layer on top of the previous one.
+ Layer Execution:
+ ----------------
+   Base Image Layer: Docker pulls the base image ubuntu:20.04.
+   Package Installation Layer: Installs package1 and package2, creating a new layer.
+   Copy Layer: Copies application files into /app, creating another new layer.
+   Working Directory Layer: Sets /app as the working directory, another new layer.
+   Expose Port Layer: Specifies port 8080 to be exposed, adding another layer.
+   Entrypoint Layer: Sets the entrypoint to python3 app.py, creating the final layer.
