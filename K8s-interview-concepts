@@ -54,3 +54,15 @@ For example :
 7) What is a dockerfile ?
 =========================
     A Dockerfile is a text document that contains a set of instructions or commands that Docker uses to assemble an image.
+
+8) What is k8s ?
+================
+   Definition: An open-source platform designed to automate deploying, scaling, and operating application containers.
+   Components:
+     Master Node: Manages the Kubernetes cluster.
+     Worker Nodes: Run the application workloads.
+
+9) What are Pods ?
+==================
+   Definition: The smallest and simplest Kubernetes object. A pod represents a single instance of a running process in a cluster.
+   Characteristics: A Pod Can contain one or more containers, shared storage, and network resources.
