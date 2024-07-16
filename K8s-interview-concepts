@@ -1,0 +1,19 @@
+1) What is Container Image ?
+============================
+Definition: A read-only template that contains the application and its dependencies.
+Purpose: To create and run containers consistently across different environments.
+Example: A Docker image for a Python web application might include Python runtime, application code, and required libraries.
+
+2) What is Container ?
+======================
+Definition: A lightweight, standalone executable package that includes everything needed to run a piece of software, such as code, runtime, libraries, and system tools.
+Purpose: To ensure consistent and reliable deployment across different environments.
+Example: Running a web application inside a Docker container ensures it runs the same way on a developer’s laptop as on a production server.
+
+3) What is Container Runtime ?
+==============================
+Definition: The software that runs and manages containers on a host system.
+Purpose: To provide the necessary tools and libraries to run and manage containerized applications.
+Example: Docker is a popular container runtime that allows you to create, run, and manage containers.
+
+4) 
