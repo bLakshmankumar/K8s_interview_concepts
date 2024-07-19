@@ -115,3 +115,29 @@ For example :
 ===================
    Definition: A dedicated infrastructure layer for handling service-to-service communication.
    Tools: Istio, Linkerd.
+20) Best practices to create docker images smaller :
+=====================================================
+    Use Minimal Base Images : Start with a minimal base image like alpine which is about 5 MB. Be cautious of compatibility issues with some software.
+    Avoid Storing Secrets in Images : Use Environment Variables: Avoid including secrets or sensitive data in the Docker image. Use environment variables or Docker secrets instead.
+    Minimize Layers :  Combine Commands: Reduce the number of layers by combining multiple commands into a single RUN statement.
+    -----------------
+        RUN apt-get update && \
+        apt-get install -y package1 package2 && \
+        rm -rf /var/lib/apt/lists/*
+    Multi-Stage Builds :  
+    ---------------------
+            FROM golang:1.16-alpine AS builder
+            WORKDIR /app
+            COPY . .
+            RUN go build -o myapp
+
+            FROM alpine
+            WORKDIR /app
+            COPY --from=builder /app/myapp .
+            ENTRYPOINT ["./myapp"]
+    21) Aprroches to create a docker images 
+    ========================================
+         There are two main approaches you can use: creating images from a running container or using a Dockerfile
+              Using a running container: a container is started, and modifications are applied to the container. From the container, docker commands are used to write modifications
+              Using a Dockerfile: a Dockerfile contains instructions for building an image. Each instruction adds a new layer to the image. This offers more control over what files are added to which layer.
+       
