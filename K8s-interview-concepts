@@ -135,7 +135,7 @@ For example :
             WORKDIR /app
             COPY --from=builder /app/myapp .
             ENTRYPOINT ["./myapp"]
-    21) Aprroches to create a docker images 
+    21) Aprroches to create a docker images :
     ========================================
          There are two main approaches you can use: creating images from a running container or using a Dockerfile
               Using a running container: a container is started, and modifications are applied to the container. From the container, docker commands are used to write modifications
